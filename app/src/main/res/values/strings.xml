@@ -34,4 +34,11 @@
     <string name="basic_views_volume_label">Volume</string>
     <string name="basic_views_download_label">Downloading data…</string>
     <string name="basic_views_goal_reached_label">Goal reached</string>
+
+    <string name="product_item_buy_button">Buy product</string>
+    <string name="product_item_price_text">%1$s $</string>
+
+    <string name="recycler_view_add_button">Add</string>
+    <string name="recycler_view_remove_button">Remove</string>
+    <string name="recycler_view_change_button">Change</string>
 </resources>
