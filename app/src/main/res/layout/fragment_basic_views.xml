@@ -11,14 +11,48 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <TextView
-            android:id="@+id/text"
+        <LinearLayout
+            android:id="@+id/group"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/basic_views_text"
+            android:orientation="vertical"
+            android:importantForAccessibility="yes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/basic_views_text_group" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/basic_views_text_text" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/basic_views_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/group" />
+
+        <TextView
+            android:id="@+id/text_view_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/basic_views_login_text_button"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text" />
 
         <Button
             android:id="@+id/button"
@@ -30,7 +64,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text" />
+            app:layout_constraintTop_toBottomOf="@id/text_view_button" />
 
         <ImageView
             android:id="@+id/image"
@@ -54,6 +88,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <ImageView
+            android:id="@+id/share_image_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/basic_views_share_button"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_share"
+            app:layout_constraintStart_toEndOf="@+id/share_button"
             app:layout_constraintTop_toBottomOf="@id/image" />
 
         <TextView
@@ -87,8 +135,6 @@
             android:paddingBottom="16dp"
             android:switchPadding="16dp"
             android:text="@string/basic_views_logging_switch_text"
-            android:textOff="@string/basic_views_logging_switch_off"
-            android:textOn="@string/basic_views_logging_switch_on"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -150,20 +196,19 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/volume_label"
+            android:id="@+id/speed_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:labelFor="@id/volume_seek_bar"
-            android:text="@string/basic_views_volume_label"
-            app:layout_constrainedWidth="true"
+            android:labelFor="@+id/speed_seek_bar"
+            android:text="@string/basic_views_speed_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gender_radio_group" />
 
         <SeekBar
-            android:id="@+id/volume_seek_bar"
+            android:id="@+id/speed_seek_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -171,7 +216,7 @@
             android:progress="40"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/volume_label" />
+            app:layout_constraintTop_toBottomOf="@id/speed_label" />
 
         <ProgressBar
             android:id="@+id/download_progress_bar"
@@ -180,7 +225,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/volume_seek_bar" />
+            app:layout_constraintTop_toBottomOf="@id/speed_seek_bar" />
 
         <TextView
             android:id="@+id/download_label"
@@ -189,6 +234,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/basic_views_download_label"
+            android:labelFor="@id/download_progress_bar"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -202,7 +248,6 @@
             android:layout_marginTop="16dp"
             android:labelFor="@id/goal_reached_progress"
             android:text="@string/basic_views_goal_reached_label"
-            app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -220,6 +265,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/goal_reached_label" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goal_reached_progress">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/basic_views_hint_email"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

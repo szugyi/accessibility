@@ -36,8 +36,8 @@ class RecyclerViewFragment : Fragment() {
         recycler_view.adapter = productAdapter
 
         add_button.setOnClickListener {
-            products.add(3, generateProduct())
-            productAdapter.notifyItemInserted(3)
+            products.add(0, generateProduct())
+            productAdapter.notifyItemInserted(0)
         }
 
         remove_button.setOnClickListener {
@@ -50,12 +50,16 @@ class RecyclerViewFragment : Fragment() {
         }
 
         change_button.setOnClickListener {
+            if (products.size <= 3) {
+                return@setOnClickListener
+            }
+
             products[3] = generateProduct()
             productAdapter.notifyItemChanged(3)
         }
     }
 
-    fun generateProduct(): Product {
+    private fun generateProduct(): Product {
         return Product(name = "Test", price = BigDecimal.ONE)
     }
 }

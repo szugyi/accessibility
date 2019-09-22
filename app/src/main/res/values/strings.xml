@@ -14,7 +14,10 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+    <string name="basic_views_text_group">Group</string>
+    <string name="basic_views_text_text">Text</string>
     <string name="basic_views_text">This is some example text</string>
+    <string name="basic_views_login_text_button">Login</string>
     <string name="basic_views_login_button">Login</string>
     <string name="basic_views_login_started">Login started</string>
     <string name="basic_views_login_cancel">Cancel login</string>
@@ -24,16 +27,17 @@
     <string name="basic_views_notification_toggle_text">Notification sounds</string>
     <string name="basic_views_notification_toggle_on">On</string>
     <string name="basic_views_notification_toggle_off">Off</string>
-    <string name="basic_views_logging_switch_text">Logging enabled</string>
+    <string name="basic_views_logging_switch_text">Logging</string>
     <string name="basic_views_logging_switch_on">Enabled</string>
     <string name="basic_views_logging_switch_off">Disabled</string>
     <string name="basic_views_gps_settings_label">Use GPS</string>
     <string name="basic_views_gender_label">Gender</string>
     <string name="basic_views_gender_male">Male</string>
     <string name="basic_views_gender_female">Female</string>
-    <string name="basic_views_volume_label">Volume</string>
+    <string name="basic_views_speed_label">Speed</string>
     <string name="basic_views_download_label">Downloading data…</string>
     <string name="basic_views_goal_reached_label">Goal reached</string>
+    <string name="basic_views_hint_email">Email</string>
 
     <string name="product_item_buy_button">Buy product</string>
     <string name="product_item_price_text">%1$s $</string>
